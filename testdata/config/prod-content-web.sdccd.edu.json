@@ -1,0 +1,10 @@
+{
+  "domain": "prod-content-web.sdccd.edu",
+  "cert_dir": "./testdata/certs/prod-content-web.sdccd.edu",
+  "certfile": "prod-content-web.sdccd.edu.cer",
+  "keyfile": "prod-content-web.sdccd.edu.key",
+  "deploy_method": "api",
+  "pfx_password": "vdwHMtrkMKCVy3bBx4he",
+  "auth_token": "ff49ca3ea21edf591ff796f60dccba666a50992a0479cee78adc528beb75a228",
+  "server_name": "nixos"
+}

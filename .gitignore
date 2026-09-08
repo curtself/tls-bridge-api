@@ -1,2 +1,4 @@
-config
 certs
+*.key
+*.pfx
+*.cer
