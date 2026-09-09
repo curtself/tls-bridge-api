@@ -3,6 +3,7 @@ package api
 import (
 	"net/http"
 
+	"tls-bridge-api/appconfig"
 	"tls-bridge-api/certificates"
 	"tls-bridge-api/config"
 )
@@ -12,14 +13,14 @@ type Server struct {
 	config       config.Config
 }
 
-func NewServer(cfg config.Config, certService *certificates.Service) *http.Server {
+func NewServer(cfg config.Config, certService *certificates.Service, acfg appconfig.Config) *http.Server {
 	server := &Server{
 		certificates: certService,
 		config:       cfg,
 	}
 
 	return &http.Server{
-		Addr:    ":8080",
+		Addr:    acfg.Addr,
 		Handler: server.routes(),
 	}
 }

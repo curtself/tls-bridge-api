@@ -28,7 +28,7 @@ type Metadata struct {
 	ExtendedKeyUsage   []string        `json:"extendedKeyUsage"`
 	AuthorityInfo      []AuthorityInfo `json:"authorityInfo"`
 	SignatureAlgorithm string          `json:"signatureAlgorithm"`
-	PublicKeyAlgorithm string         `json:"publicKeyAlgorithm"`
+	PublicKeyAlgorithm string          `json:"publicKeyAlgorithm"`
 	PublicKeySize      int             `json:"publicKeySize"`
 }
 

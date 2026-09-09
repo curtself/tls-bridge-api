@@ -1,10 +1,10 @@
 package api
 
 import (
-	"fmt"
-	"os"
-	"net/http"
 	"encoding/json"
+	"fmt"
+	"net/http"
+	"os"
 )
 
 func healthHandler(w http.ResponseWriter, r *http.Request) {

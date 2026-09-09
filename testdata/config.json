@@ -1,0 +1,5 @@
+{
+  "addr": ":5243",
+  "config_dir": "./testdata/config",
+  "certs_dir": "./testdata/certs"
+}
