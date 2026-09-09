@@ -1,0 +1,10 @@
+{
+  "domain": "admin.sdccd.edu",
+  "cert_dir": "/opt/acme/certs/admin.sdccd.edu",
+  "certfile": "admin.sdccd.edu.cer",
+  "keyfile": "admin.sdccd.edu.key",
+  "deploy_method": "api",
+  "pfx_password": "a2b727965ee139f3dcbcb7b6",
+  "auth_token": "8dd5eb5226b0b45e28933e3c7d6bb6d6da317349bbcaea0fa3e4f539a5d42554",
+  "server_name": "nixos"
+}

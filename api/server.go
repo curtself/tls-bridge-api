@@ -13,21 +13,29 @@ type Server struct {
 }
 
 func NewServer(cfg config.Config, certService *certificates.Service) *http.Server {
-	apiServer := &Server{
+	server := &Server{
 		certificates: certService,
 		config:       cfg,
 	}
 
+	return &http.Server{
+		Addr:    ":8080",
+		Handler: server.routes(),
+	}
+}
+
+func (s *Server) routes() http.Handler {
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("/api/health", healthHandler)
+
 	mux.Handle(
 		"GET /api/certificates/{domain}/metadata",
-		authMiddleware(cfg, http.HandlerFunc(apiServer.metadataHandler)),
+		authMiddleware(
+			s.config,
+			http.HandlerFunc(s.metadataHandler),
+		),
 	)
 
-	return &http.Server{
-		Addr:    ":8080",
-		Handler: mux,
-	}
+	return mux
 }
