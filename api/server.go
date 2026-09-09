@@ -36,6 +36,13 @@ func (s *Server) routes() http.Handler {
 			http.HandlerFunc(s.metadataHandler),
 		),
 	)
+	mux.Handle(
+		"GET /api/certificates/{domain}/download",
+		authMiddleware(
+			s.config,
+			http.HandlerFunc(s.downloadHandler),
+		),
+	)
 
 	return mux
 }

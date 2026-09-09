@@ -2,6 +2,7 @@ package certificates
 
 import (
 	"fmt"
+	"os"
 	"path/filepath"
 
 	"tls-bridge-api/config"
@@ -33,6 +34,10 @@ func (s *Service) GetPFXPath(domain string) (string, error) {
 		domain,
 		domain+".pfx",
 	)
+
+	if _, err := os.Stat(pfxPath); err != nil {
+		return "", err
+	}
 
 	return pfxPath, nil
 }

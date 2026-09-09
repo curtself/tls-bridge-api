@@ -2,6 +2,7 @@ package api
 
 import (
 	"fmt"
+	"os"
 	"net/http"
 	"encoding/json"
 )
@@ -25,4 +26,28 @@ func (s *Server) metadataHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "failed to encode response", http.StatusInternalServerError)
 		return
 	}
+}
+
+func (s *Server) downloadHandler(w http.ResponseWriter, r *http.Request) {
+	domain := r.PathValue("domain")
+
+	pfxPath, err := s.certificates.GetPFXPath(domain)
+	if err != nil {
+		http.Error(w, "certificate not found", http.StatusNotFound)
+		return
+	}
+
+	data, err := os.ReadFile(pfxPath)
+	if err != nil {
+		http.Error(w, "failed to read certificate", http.StatusInternalServerError)
+		return
+	}
+
+	w.Header().Set("Content-Type", "application/x-pkcs12")
+	w.Header().Set(
+		"Content-Disposition",
+		`attachment; filename="`+domain+`.pfx"`,
+	)
+
+	w.Write(data)
 }

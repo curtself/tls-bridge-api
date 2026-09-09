@@ -37,3 +37,37 @@ func TestGetMetadataMissingDomain(t *testing.T) {
 		t.Error("expected error for missing domain")
 	}
 }
+
+func TestGetPFXPath(t *testing.T) {
+	cfg := config.New(
+		"../testdata/config",
+		"../testdata/certs",
+	)
+
+	service := NewService(cfg)
+
+	path, err := service.GetPFXPath("prod-content-web.sdccd.edu")
+	if err != nil {
+		t.Fatalf("failed to get PFX path: %v", err)
+	}
+
+	expected := "../testdata/certs/prod-content-web.sdccd.edu/prod-content-web.sdccd.edu.pfx"
+
+	if path != expected {
+		t.Errorf("expected path %s, got %s", expected, path)
+	}
+}
+
+func TestGetPFXPathMissingDomain(t *testing.T) {
+	cfg := config.New(
+		"../testdata/config",
+		"../testdata/certs",
+	)
+
+	service := NewService(cfg)
+
+	_, err := service.GetPFXPath("does-not-exist.example.com")
+	if err == nil {
+		t.Error("expected error for missing PFX")
+	}
+}
