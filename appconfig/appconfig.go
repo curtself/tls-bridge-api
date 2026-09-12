@@ -1,3 +1,7 @@
+/*
+appconfig/apconfig.go
+Configuration data for the application, such as listen address and the application directories
+*/
 package appconfig
 
 import (

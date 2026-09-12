@@ -1,3 +1,6 @@
+/*
+Tests loading configuraiton data for a known development config.
+*/
 package config
 
 import (

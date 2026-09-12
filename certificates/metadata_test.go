@@ -1,3 +1,7 @@
+/*
+certificates/metadata_test.go
+Tests metadata loading against a known development configuration
+*/
 package certificates
 
 import (

@@ -1,3 +1,7 @@
+/*
+certificates/certificates.go
+Helper for certificate related tasks and routes
+*/
 package certificates
 
 import (

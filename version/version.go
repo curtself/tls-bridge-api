@@ -1,3 +1,6 @@
+/*
+Package for managing version. Injected into application at build time.
+*/
 package version
 
 var (

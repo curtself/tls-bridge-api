@@ -1,3 +1,7 @@
+/*
+api/server.go
+Defines server and routes
+*/
 package api
 
 import (

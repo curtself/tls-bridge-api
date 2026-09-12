@@ -1,3 +1,7 @@
+/*
+api/auth.go
+Authorization middleware for protected endpoints
+*/
 package api
 
 import (

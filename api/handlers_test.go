@@ -1,3 +1,7 @@
+/*
+api/handlers_test.go
+Tests scenarios for the handlers
+*/
 package api
 
 import (

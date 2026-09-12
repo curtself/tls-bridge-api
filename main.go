@@ -1,3 +1,7 @@
+/*
+Entry point to tls-bridge-api - loads either default config or path passed via -config argument.
+Prints the listener address and version info.
+*/
 package main
 
 import (

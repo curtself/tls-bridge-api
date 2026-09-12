@@ -1,3 +1,7 @@
+/*
+certificates/certificates_test.go
+Tests the known development configuration
+*/
 package certificates
 
 import (

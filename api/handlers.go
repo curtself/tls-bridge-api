@@ -1,3 +1,7 @@
+/*
+api/handlers.go
+Handles server requests
+*/
 package api
 
 import (

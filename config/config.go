@@ -1,3 +1,8 @@
+/*
+Defines the config struct and provides a function to load from a given path.
+This config includes the auth token for a domain, used by the api/auth.go middleware
+for requests to /metadata and /download endpoints.
+*/
 package config
 
 import (
