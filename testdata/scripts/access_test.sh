@@ -1,5 +1,5 @@
 echo Testing health:
-ADDRESS="http://localhost:5243"
+ADDRESS="https://acme-api.sdccd.edu"
 curl $ADDRESS/api/health
 CERT_NAME="prod-content-web.sdccd.edu"
 echo Testing anonymous access:
